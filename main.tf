@@ -85,6 +85,4 @@ output "firewall_self_link" {
   
 output "compute_instance_addresses" {
   value = "${module.compute_instance.addresses}"
-
-
-
+}
