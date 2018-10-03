@@ -47,7 +47,7 @@ module "network_firewall" {
   name = "allow-80"
   network = "${module.network.name}"
   ports = [80]
-  protocol = "http"
+  protocol = "TCP"
   source_ranges = ["0.0.0.0/0"]
 }
 
