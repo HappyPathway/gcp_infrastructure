@@ -29,7 +29,7 @@ variable "compute_instance_machine_type" {}
 //--------------------------------------------------------------------
 // Modules
 module "compute_instance" {
-  source  = "app.terraform.io/GCPDemo/compute-instance/google"
+  source  = "github.com/HappyPathway/terraform-google-compute-instance"
   version = "1.0.0"
 
   count = "${var.compute_instance_count}"
@@ -41,7 +41,7 @@ module "compute_instance" {
 }
 
 module "network_firewall" {
-  source  = "app.terraform.io/GCPDemo/network-firewall/google"
+  source  = "git@github.com:HappyPathway/terraform-google-network-firewall"
   version = "1.0.0"
 
   name = "allow-80"
@@ -52,7 +52,7 @@ module "network_firewall" {
 }
 
 module "network_subnet" {
-  source  = "app.terraform.io/GCPDemo/network-subnet/google"
+  source  = "git@github.com:HappyPathway/terraform-google-network-subnet"
   version = "1.0.0"
 
   description = "darnold demo network"
@@ -62,7 +62,7 @@ module "network_subnet" {
 }
 
 module "network" {
-  source  = "app.terraform.io/GCPDemo/network/google"
+  source  = "git@github.com:HappyPathway/terraform-google-network"
   version = "1.0.0"
 
   auto_create_subnetworks = "false"
